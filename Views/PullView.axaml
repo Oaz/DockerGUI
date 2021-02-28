@@ -1,0 +1,17 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignWidth="600" d:DesignHeight="400"
+             d:Width="600" d:Height="400"
+             x:Class="DockerGUI.Views.PullView">
+
+  <Grid ColumnDefinitions="1*,Auto" RowDefinitions="Auto,Auto">
+    <TextBox Grid.Column="0" Grid.Row="0" Text="{Binding Name}" />
+    <Button Grid.Column="1" Grid.Row="0" Content="PULL" IsEnabled="{Binding !IsDownloading}" Command="{Binding Pull}" />
+    <ContentControl Grid.Column="0" Grid.Row="1" Content="{Binding Progress}" />
+    <Button Grid.Column="1" Grid.Row="1" Content="CANCEL" IsEnabled="{Binding IsDownloading}" Command="{Binding Cancel}" />
+  </Grid>
+
+</UserControl>

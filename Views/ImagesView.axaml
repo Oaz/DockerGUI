@@ -1,0 +1,26 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignWidth="600" d:DesignHeight="400"
+             x:Class="DockerGUI.Views.ImagesView">
+  
+  <TreeView Items="{Binding AsTree}" SelectionMode="Single" SelectedItem="{Binding Selection}">
+    <TreeView.Styles>
+      <Style Selector="TreeViewItem">
+        <Setter Property="IsExpanded" Value="True"/>
+      </Style>
+    </TreeView.Styles>
+    <TreeView.DataTemplates>
+      <TreeDataTemplate ItemsSource="{Binding Children}">
+        <StackPanel Orientation="Horizontal" Spacing="5">
+          <TextBlock Text="{Binding Parent.Name}" VerticalAlignment="Center" FontSize="12" FontWeight="Bold"/>
+          <TextBlock Text="{Binding Parent.ShortID}" VerticalAlignment="Center" FontSize="10"/>
+          <TextBlock Text="{Binding Parent.DisplaySize}" VerticalAlignment="Center" FontSize="10"/>
+        </StackPanel>
+      </TreeDataTemplate>
+    </TreeView.DataTemplates>
+  </TreeView>
+
+</UserControl>

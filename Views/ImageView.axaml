@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignWidth="600" d:DesignHeight="400"
+             x:Class="DockerGUI.Views.ImageView">
+  
+  <StackPanel Orientation="Vertical" Spacing="5" Margin="0 0 0 10 ">
+    <DockPanel LastChildFill="True">
+      <Button DockPanel.Dock="Right" Content="DELETE" Command="{Binding DeleteImage}" FontSize="10" />
+      <TextBlock Text="{Binding ID}" VerticalAlignment="Center" FontSize="10"/>
+    </DockPanel>
+    <ItemsControl Items="{Binding Tags}">
+      <ItemsControl.ItemTemplate>
+        <DataTemplate>
+          <TextBlock Text="{Binding}" FontSize="12" FontWeight="Bold"/>
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
+    <ContentControl Content="{Binding NewContainer}" />
+  </StackPanel>
+
+</UserControl>

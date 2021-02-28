@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="600" d:DesignHeight="400"
+        Width="1200" Height="600"
+        x:Class="DockerGUI.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="DockerGUI">
+  
+    <Grid ColumnDefinitions="1*,5,1*">
+      <DockPanel Grid.Column="0" LastChildFill="True">
+        <ContentControl DockPanel.Dock="Top" Content="{Binding Pull}" Margin="5" />
+        <ContentControl DockPanel.Dock="Bottom" Content="{Binding Content.Current, ElementName=Images}" Margin="5 15 5 5" />
+        <ContentControl Name="Images" Content="{Binding Images}" />
+      </DockPanel>
+      <GridSplitter Grid.Column="1" Background="Gray" />
+      <DockPanel Grid.Column="2" LastChildFill="True">
+        <ContentControl Content="{Binding Containers}" />
+      </DockPanel>
+    </Grid>
+  
+
+
+</Window>
