@@ -8,7 +8,7 @@
   
   <ScrollViewer HorizontalScrollBarVisibility="Disabled"
                 VerticalScrollBarVisibility="Auto">
-    <ItemsControl Items="{Binding AsList}" />
+    <ItemsControl ItemsSource="{Binding AsList}" />
   </ScrollViewer>
 
 </UserControl>

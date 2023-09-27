@@ -5,8 +5,8 @@ using System.Reactive.Linq;
 using System.Threading.Tasks;
 using Docker.DotNet.Models;
 using DockerGUI.Models;
-using MessageBox.Avalonia.DTO;
-using MessageBox.Avalonia.Enums;
+using MsBox.Avalonia.Dto;
+using MsBox.Avalonia.Enums;
 using ReactiveUI;
 
 namespace DockerGUI.ViewModels
@@ -16,7 +16,7 @@ namespace DockerGUI.ViewModels
     public ImageViewModel(DockerService docker, ImagesListResponse image)
     {
       _docker = docker;
-      Name = image.RepoTags?.ElementAt(0) ?? "---";
+      Name = image.RepoTags.Any() ? image.RepoTags[0] : "---";
       ID = image.ID;
       ShortID = ID.Substring(7,12);
       IsRoot = image.ParentID == string.Empty;

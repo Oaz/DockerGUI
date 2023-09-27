@@ -14,10 +14,10 @@
       <Button Content="STOP" Command="{Binding Stop}" FontSize="10" IsEnabled="{Binding IsStarted}" />
       <Button Content="REMOVE" Command="{Binding Remove}" FontSize="10" IsEnabled="{Binding !IsStarted}" IsVisible="{Binding IsRemovable}"/>
     </StackPanel>
-    <ItemsControl Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Items="{Binding PublicPorts}">
+    <ItemsControl Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" ItemsSource="{Binding PublicPorts}">
       <ItemsControl.ItemTemplate>
         <DataTemplate>
-          <TextBlock Text="{Binding}" Tapped="OpenWeb" Margin="0 0 5 0" />
+          <Button Click="OpenWeb" Margin="0 0 5 0"><TextBlock Text="{Binding}" /></Button>
         </DataTemplate>
       </ItemsControl.ItemTemplate>
     </ItemsControl>

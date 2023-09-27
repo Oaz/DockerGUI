@@ -3,7 +3,7 @@ using Avalonia.Markup.Xaml;
 
 namespace DockerGUI.Views
 {
-  public class PullView : UserControl
+  public partial class PullView : UserControl
   {
     public PullView()
     {

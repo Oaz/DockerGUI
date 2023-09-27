@@ -11,7 +11,7 @@
       <Button DockPanel.Dock="Right" Content="DELETE" Command="{Binding DeleteImage}" FontSize="10" />
       <TextBlock Text="{Binding ID}" VerticalAlignment="Center" FontSize="10"/>
     </DockPanel>
-    <ItemsControl Items="{Binding Tags}">
+    <ItemsControl ItemsSource="{Binding Tags}">
       <ItemsControl.ItemTemplate>
         <DataTemplate>
           <TextBlock Text="{Binding}" FontSize="12" FontWeight="Bold"/>

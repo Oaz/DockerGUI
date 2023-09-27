@@ -12,7 +12,7 @@
       <TextBox Text="{Binding Name}" Watermark="New container name" />
       <CheckBox IsChecked="{Binding IsAutoRemove}">Auto-remove</CheckBox>
     </StackPanel>
-    <ItemsControl Items="{Binding PortMapping}" />
+    <ItemsControl ItemsSource="{Binding PortMapping}" />
   </StackPanel>
 
 </UserControl>

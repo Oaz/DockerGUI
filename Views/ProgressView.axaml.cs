@@ -3,7 +3,7 @@ using Avalonia.Markup.Xaml;
 
 namespace DockerGUI.Views
 {
-  public class ProgressView : UserControl
+  public partial class ProgressView : UserControl
   {
     public ProgressView()
     {

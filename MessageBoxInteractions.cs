@@ -2,9 +2,9 @@ using System;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
-using MessageBox.Avalonia;
-using MessageBox.Avalonia.DTO;
-using MessageBox.Avalonia.Enums;
+using MsBox.Avalonia;
+using MsBox.Avalonia.Dto;
+using MsBox.Avalonia.Enums;
 using ReactiveUI;
 
 namespace DockerGUI
@@ -22,8 +22,8 @@ namespace DockerGUI
         getInteraction(viewModel).RegisterHandler(async interaction =>
         {
           var result = await MessageBoxManager
-            .GetMessageBoxStandardWindow(interaction.Input)
-            .ShowDialog((Application.Current.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime)?.MainWindow);
+            .GetMessageBoxStandard(interaction.Input)
+            .ShowAsPopupAsync((Application.Current.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime)?.MainWindow);
           interaction.SetOutput(result);
         });
       };

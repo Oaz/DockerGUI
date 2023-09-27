@@ -4,7 +4,7 @@ using DockerGUI.ViewModels;
 
 namespace DockerGUI.Views
 {
-  public class ImageView : UserControl
+  public partial class ImageView : UserControl
   {
     public ImageView()
     {
